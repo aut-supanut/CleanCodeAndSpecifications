@@ -1,5 +1,7 @@
 package lab;
 
+import org.w3c.dom.Text;
+
 /** ส่วน A ข้อ 1 — Intention-Revealing Name + Pure Function */
 public class StringUtils {
     /**
@@ -10,8 +12,25 @@ public class StringUtils {
      */
     public static int countVowels(String text) {
         // TODO: ถ้า text เป็น null ให้ throw IllegalArgumentException
+        if(text == null) throw new IllegalArgumentException("text is null");
+        
         // TODO: วนนับสระ a,e,i,o,u (พิมพ์เล็ก/ใหญ่) แล้ว return
         //       (ใช้ตัวแปร local เท่านั้น = pure function)
-        return 0;
+        int countVowels = 0;
+        String Vowels = "aeiou";
+        text = text.toLowerCase();
+
+        for (int i = 0 ; i<text.length() ; i++){
+            for (int j = 0;  j < Vowels.length(); j++){
+                if(text.charAt(i) == Vowels.charAt(j)) countVowels++;
+                
+            }
+            
+        }
+
+
+
+        
+        return countVowels;
     }
 }
