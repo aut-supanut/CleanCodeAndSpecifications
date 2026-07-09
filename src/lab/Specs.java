@@ -11,12 +11,20 @@ package lab;
  *    - บรรทัดสรุปว่าเมธอด "ทำอะไร" (what, ไม่ใช่ how)
  *    - @param   ของทุกพารามิเตอร์ พร้อมข้อจำกัด (pre-condition)
  *    - @return  อธิบายค่าที่คืน (post-condition)
- *    - @throws  ทุก exception ที่โยน พร้อมเงื่อนไข
+ *      ทุก exception ที่โยน พร้อมเงื่อนไข
  * ==========================================================================
  */
 public class Specs {
 
     // TODO ข้อ 4: เขียน JavaDoc ให้เมธอดนี้
+    /** 
+    *   @param  arr != null
+    *   @param  key ค่าที่ต้องการหา
+    *   @return ค่าตำแหน่งที่ต้องการหา หรือ -1 ถ้าไม่เจอ
+    *   @throws IllegalArgumentException ถ้า arr เป็น null
+    *
+    * 
+    * */
     public static int firstIndexOf(int[] arr, int key) {
         if (arr == null) throw new IllegalArgumentException("arr must not be null");
         for (int i = 0; i < arr.length; i++)
@@ -27,8 +35,9 @@ public class Specs {
     // TODO ข้อ 5: เขียน JavaDoc ให้เมธอดนี้
     /**
      * 
-     * @param radius
-     * @return
+     * @param radius >= 0
+     * @return ค่า pi คูณ radius กำลังสอง
+     * @throw IllegalArgumentException ถ้า radius < 0
      */
     public static double circleArea(double radius) {
         if (radius < 0) throw new IllegalArgumentException("radius must be >= 0");
@@ -38,6 +47,12 @@ public class Specs {
     // TODO ข้อ 6: เขียน JavaDoc ให้เมธอดนี้
     //   (เมธอดนี้ตัดช่องว่างหน้า-หลัง แล้วแปลงเป็นตัวพิมพ์เล็ก;
     //    input null ให้คืน string ว่าง)
+    /**
+     * @param s != null
+     * @return String ที่เท่ากับ null และ ""
+     */
+
+    
     public static String normalize(String s) {
         if (s == null) return "";
         return s.trim().toLowerCase();
